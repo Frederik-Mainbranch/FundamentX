@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_WinFormsApp", "Test_Wi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{21B34995-C4F2-4A20-98B8-1BC3D136204F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helperklassen", "SqlX\Helperklassen.csproj", "{9B83D0E6-9945-453E-AC02-A7F9CCDC2189}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{CA85B046-D353-4D4E-87FE-7EC61A930955}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{9E1F28B8-EC78-4E0B-8A3B-1CBABD8F850C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E1F28B8-EC78-4E0B-8A3B-1CBABD8F850C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E1F28B8-EC78-4E0B-8A3B-1CBABD8F850C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B83D0E6-9945-453E-AC02-A7F9CCDC2189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B83D0E6-9945-453E-AC02-A7F9CCDC2189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B83D0E6-9945-453E-AC02-A7F9CCDC2189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B83D0E6-9945-453E-AC02-A7F9CCDC2189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
