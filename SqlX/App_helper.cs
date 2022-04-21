@@ -8,9 +8,12 @@ namespace Helperklassen
 {
     public static class App_helper
     {
-        public static void Nutze_MsSql(string _conectionstring)
+        public static bool IsAktiv_MySql { get; set; }
+        public static void Use_MsSql(string _conectionstring)
         {
-            Sql_MS_helper.Connectionstring = _conectionstring;
+            IsAktiv_MySql = true;
+            Sql_MsSql_helper.Connectionstring = _conectionstring;
+            Sql_MsSql_helper.CheckDB_exist();
         }
     }
 }
