@@ -142,6 +142,48 @@ namespace Helperklassen
             return query_result;
         }
 
+        public static DataTable Get_DataTable(string query)
+        {
+            return Get_DataTable(query, Connection, true);
+        }
+
+        public static DataTable Get_DataTable(string query, bool manageConnection)
+        {
+            return Get_DataTable(query, Connection, manageConnection);
+        }
+
+        public static DataTable Get_DataTable(string query, SqlConnection connection)
+        {
+            return Get_DataTable(query, connection, true);
+        }
+
+        public static DataTable Get_DataTable(string query, SqlConnection connection, bool manageConnection)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                if (manageConnection)
+                {
+                    Connection.Open();
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(table);
+            }
+            catch (Exception e)
+            {
+                Log_helper.Create_errorMessage(e.Message);
+            }
+            finally
+            {
+                if (manageConnection)
+                {
+                    Connection.Close();
+                }
+            }
+            return table;
+        }
+
         //public static int Execute_nonQuery(string query)
         //{
         //    int count_rows_affected = 0;
@@ -168,11 +210,13 @@ namespace Helperklassen
                  Connection.Open();
         }
 
+
         public static void Close_connection()
         {
             if(Connection.State == System.Data.ConnectionState.Open)
                  Connection.Close();
         }
+
 
         public static void CheckDB_exist()
         {
@@ -196,6 +240,7 @@ namespace Helperklassen
             }
         }
 
+
         /// <summary>
         /// Creates the default Connectionstring for a local MS Sql database
         /// </summary>
@@ -206,6 +251,7 @@ namespace Helperklassen
             //sqlConnectionStringBuilder.s
             return $"Integrated Security=True;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog={_AssemblyName}";
         }
+
 
         /// <summary>
         /// Creates the default Connectionstring for a local MS Sql database with a given username and password
@@ -240,6 +286,7 @@ namespace Helperklassen
             string connectionstring = sqlConnectionStringBuilder.ToString();
             return connectionstring;
         }
+
 
         /// <summary>
         /// Creates the Connectionstring to a specific datasource and initial catalog for a local MS Sql database with a given username and password
