@@ -3,12 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
-
 using System.Data;
-using System.Data.Sql;
-using Microsoft.Win32;
 
-namespace Helperklassen
+
+namespace Helperklassen.Helper
 {
     public static class Sql_MsSql_helper
     {

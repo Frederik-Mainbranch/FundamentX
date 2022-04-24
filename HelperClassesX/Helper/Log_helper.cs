@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Helperklassen
+namespace Helperklassen.Helper
 {
     public static class Log_helper
     {
